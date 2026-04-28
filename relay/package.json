@@ -1,0 +1,15 @@
+{
+  "name": "xhs-leads-relay",
+  "version": "1.0.0",
+  "description": "小红书线索中继服务，接收 Webhook 写入飞书多维表格",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test:integration": "node scripts/local-integration-test.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.6.0"
+  }
+}

@@ -1,0 +1,20 @@
+# 依赖（体积大，提交 lockfile 即可还原）
+**/node_modules/
+
+# 密钥与本地环境（切勿提交）
+**/deploy.env
+.env
+.env.*
+!.env.example
+
+# Relay 本地数据
+**/relay/data/
+
+# 系统与编辑器
+.DS_Store
+*.log
+
+# 体量很大的本地参考资料（不参与代码审查）
+/Base 开放设计规范/
+/Base-js-sdk-docs.md
+/边栏插件开发指南.md

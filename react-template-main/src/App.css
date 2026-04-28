@@ -1,0 +1,292 @@
+@import 'reset-css';
+
+/* 符合 Base 开放设计规范：垂直布局、4 的倍数间距、系统字体 */
+:root {
+  --xhs-spacing-xs: 4px;
+  --xhs-spacing-s: 8px;
+  --xhs-spacing-m: 12px;
+  --xhs-spacing-l: 16px;
+  --xhs-spacing-xl: 20px;
+  --xhs-spacing-xxl: 24px;
+  --xhs-radius: 4px;
+  --xhs-font: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Tahoma, 'PingFang SC',
+    'Microsoft Yahei', Arial, 'Hiragino Sans GB', sans-serif;
+}
+
+.xhs-plugin {
+  font-family: var(--xhs-font);
+  padding: var(--xhs-spacing-l);
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+.xhs-plugin__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--xhs-spacing-m);
+  margin-bottom: var(--xhs-spacing-m);
+}
+
+.xhs-plugin__header-deco {
+  flex-shrink: 0;
+  display: block;
+  line-height: 0;
+}
+
+.xhs-plugin__header-deco svg {
+  display: block;
+  height: 40px;
+  width: auto;
+  opacity: 0.85;
+}
+
+/* 步骤条：当前步骤展开内容，非当前步骤仅显示标题（折叠） */
+.xhs-plugin__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: var(--xhs-spacing-l);
+}
+
+.xhs-plugin__step-item {
+  border: 1px solid var(--semi-color-border);
+  border-radius: var(--xhs-radius);
+  overflow: hidden;
+  margin-bottom: var(--xhs-spacing-s);
+}
+
+.xhs-plugin__step-item:last-child {
+  margin-bottom: 0;
+}
+
+.xhs-plugin__step-item--current {
+  border-color: var(--semi-color-primary);
+  box-shadow: 0 0 0 1px var(--semi-color-primary);
+}
+
+.xhs-plugin__step-item--done .xhs-plugin__step-header {
+  color: var(--semi-color-text-2);
+}
+
+.xhs-plugin__step-item--done .xhs-plugin__step-num {
+  background: var(--semi-color-success);
+  color: var(--semi-color-white);
+  border-color: var(--semi-color-success);
+}
+
+.xhs-plugin__step-header {
+  display: flex;
+  align-items: center;
+  gap: var(--xhs-spacing-m);
+  padding: var(--xhs-spacing-m) var(--xhs-spacing-l);
+  font-weight: 500;
+  cursor: default;
+  background: var(--semi-color-fill-0);
+}
+
+.xhs-plugin__step-item--current .xhs-plugin__step-header {
+  background: var(--semi-color-primary-light-default);
+  color: var(--semi-color-primary);
+}
+
+.xhs-plugin__step-num {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--semi-color-fill-2);
+  border: 1px solid var(--semi-color-border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.xhs-plugin__step-item--current .xhs-plugin__step-num {
+  background: var(--semi-color-primary);
+  color: var(--semi-color-white);
+  border-color: var(--semi-color-primary);
+}
+
+.xhs-plugin__step-title {
+  flex: 1;
+  text-align: left;
+}
+
+.xhs-plugin__step-body {
+  padding: var(--xhs-spacing-l);
+  border-top: 1px solid var(--semi-color-border);
+  background: var(--semi-color-bg-0);
+}
+
+.xhs-plugin__title {
+  margin-bottom: var(--xhs-spacing-s) !important;
+  font-weight: 600;
+}
+
+.xhs-plugin__header .xhs-plugin__title {
+  margin-bottom: 0 !important;
+}
+
+.xhs-plugin__desc {
+  display: block;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.xhs-plugin__action {
+  margin-bottom: var(--xhs-spacing-l);
+}
+
+.xhs-plugin__action .semi-button {
+  height: 40px;
+  border-radius: var(--xhs-radius);
+  font-weight: 500;
+}
+
+.xhs-plugin__result {
+  display: flex;
+  flex-direction: column;
+  gap: var(--xhs-spacing-m);
+  align-items: stretch;
+  text-align: left;
+}
+
+.xhs-plugin__card {
+  border-radius: var(--xhs-radius);
+  border: 1px solid var(--semi-color-border);
+  text-align: left;
+}
+
+.xhs-plugin__row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--xhs-spacing-xs);
+  align-items: flex-start;
+  text-align: left;
+  width: 100%;
+}
+
+.xhs-plugin__row .semi-typography {
+  word-break: break-all;
+  text-align: left;
+}
+
+.xhs-plugin__mono {
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 13px;
+}
+
+.xhs-plugin__label {
+  display: block;
+  text-align: left;
+}
+
+.xhs-plugin__url-wrap {
+  margin-top: var(--xhs-spacing-s);
+  padding: var(--xhs-spacing-m);
+  background: var(--semi-color-fill-0);
+  border-radius: var(--xhs-radius);
+  border: 1px solid var(--semi-color-border);
+  text-align: left;
+}
+
+.xhs-plugin__url {
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 12px;
+  word-break: break-all;
+  line-height: 1.5;
+}
+
+.xhs-plugin__tip {
+  padding: var(--xhs-spacing-m);
+  background: var(--semi-color-fill-0);
+  border-radius: var(--xhs-radius);
+  border-left: 3px solid var(--semi-color-primary);
+}
+
+.xhs-plugin__tip .semi-typography {
+  display: block;
+  line-height: 1.5;
+}
+
+.xhs-plugin__err {
+  margin-top: var(--xhs-spacing-m);
+  padding: var(--xhs-spacing-m);
+  background: var(--semi-color-danger-light-default);
+  border-radius: var(--xhs-radius);
+  border: 1px solid var(--semi-color-danger);
+}
+
+/* 作者介绍 - 参考 Figma Profile Card 样式 */
+.xhs-plugin__author {
+  margin-top: var(--xhs-spacing-xxl);
+  padding-top: var(--xhs-spacing-l);
+  border-top: 1px solid var(--semi-color-border);
+}
+
+.xhs-plugin__author-card {
+  border-radius: var(--xhs-radius);
+  border: 1px solid var(--semi-color-border);
+  background: var(--semi-color-fill-0);
+  overflow: hidden;
+}
+
+.xhs-plugin__author-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--xhs-spacing-l);
+  padding: var(--xhs-spacing-l);
+}
+
+.xhs-plugin__author-avatar {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--semi-color-fill-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.xhs-plugin__author-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.xhs-plugin__author-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--xhs-spacing-xs);
+}
+
+.xhs-plugin__author-name {
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--semi-color-text-0);
+}
+
+.xhs-plugin__author-desc {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--semi-color-text-2);
+}
+
+.xhs-plugin__author-xhs {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.xhs-plugin__xhs-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
