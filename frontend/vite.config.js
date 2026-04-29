@@ -11,6 +11,7 @@ export default defineConfig({
         host: "0.0.0.0",
     },
     build: {
+        outDir: "dist",
         rollupOptions: {
             external: ["#minpath", "#minproc", "#minurl"],
         },
