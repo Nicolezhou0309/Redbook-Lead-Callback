@@ -10,7 +10,7 @@
     "deploy": "bash deploy.sh"
   },
   "keywords": [],
-  "output": "dist",
+  "output": "../dist",
   "author": "",
   "license": "ISC",
   "devDependencies": {

@@ -30,9 +30,9 @@ echo ">>> 上传 dist 到 $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH ..."
 SSH_OPTS="-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
 if [ -n "$DEPLOY_PASS" ]; then
   command -v sshpass >/dev/null 2>&1 || { echo "请安装 sshpass: brew install sshpass"; exit 1; }
-  sshpass -p "$DEPLOY_PASS" rsync -avz --delete -e "ssh $SSH_OPTS" dist/ "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/"
+  sshpass -p "$DEPLOY_PASS" rsync -avz --delete -e "ssh $SSH_OPTS" "$SCRIPT_DIR/../dist/" "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/"
 else
-  rsync -avz --delete -e "ssh $SSH_OPTS" dist/ "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/"
+  rsync -avz --delete -e "ssh $SSH_OPTS" "$SCRIPT_DIR/../dist/" "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/"
 fi
 
 echo ">>> 部署完成。前端访问: https://$DEPLOY_HOST/ （取决于你 Nginx 配置）"

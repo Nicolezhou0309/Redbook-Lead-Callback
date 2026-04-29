@@ -1,3 +1,6 @@
+# 构建产物输出在仓库根目录 dist/（见 frontend/vite.config.js）
+/frontend/dist/
+
 # 依赖（体积大，提交 lockfile 即可还原）
 **/node_modules/
 
